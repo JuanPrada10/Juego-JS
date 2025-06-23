@@ -1,4 +1,4 @@
-# 🕹️ Juego de Dados - JS
+# 🕹️ Simulador Juego de Dados - JS
 
 ¡Bienvenido a este mini juego de dados hecho en JavaScript puro!  
 Dos jugadores compiten usando dados y fichas, colocándolas en estaciones según reglas específicas. El primero en quedarse sin fichas, gana.
