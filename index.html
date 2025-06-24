@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎲Juego🎲</title>
+    <link rel="stylesheet" href="./src/output.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-[#081521] text-[#DEB992] font-['Electrolize', sans-serif] scroll-smooth"
+  >
+    <header class="text-[#44B5C1] font-semibold]" id="header">
+      <nav class="flex justify-evenly items-center w-min-full h-20">
+        <div class="flex items-center gap-2">
+          <img
+            src="./resources/dice-2-svgrepo-com (1).svg"
+            class="size-10 text-[#44B5C1]"
+          />
+
+          <span class="font-bold text-2xl">Dice Game</span>
+        </div>
+
+        <ul class="flex gap-5">
+          <li
+            class="text-lg font-semibold hover:scale-110 transition-all duration-300"
+          >
+            <a href="#header">Jugar</a>
+          </li>
+          <li
+            class="text-lg font-semibold hover:scale-110 transition-all duration-300"
+          >
+            <a href="#Manual">Manual</a>
+          </li>
+          <li
+            class="text-lg font-semibold hover:scale-110 transition-all duration-3lg"
+          >
+            <a href="https://github.com/JuanPrada10/Juego-JS" target="_blank"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <hr class="w-[80%] m-auto text-[#DEB992]" />
+    </header>
+
+    <div class="flex flex-col items-center justify-center">
+      <h1 class="flex justify-center text-3xl font-semibold m-20">
+        Juego de Dados JS
+      </h1>
+      <p><strong>Turno de:</strong> <span id="turno">Jugador 1</span></p>
+
+      <div
+        id="estado-juego"
+        class="w-[80%] m-auto flex justify-between h-90 items-center p-20"
+      >
+        <div class="flex flex-col items-center">
+          <div
+            class="flex flex-col items-center border-1 border-[#DEB992] p-5 rounded-sm gap-3 bg-white/20"
+          >
+            <h1 class="text-xl font-semibold">Player 1</h1>
+            <img
+              src="./resources/player1.svg"
+              alt="player 1"
+              class="size-40"
+            /><strong
+              ><img
+                src="./resources/poker-piece-svgrepo-com.svg"
+                alt="fichas"
+                class="size-5"
+            /></strong>
+            <span id="fichas-j1">20</span>
+          </div>
+          <button
+            id="lanzarBtn2"
+            class="border-[#DEB992] border-1 p-2 rounded-sm bg-[#237b85] hover:bg-slate-100/20 hover:scale-110 transition-all duration-300 m-5 text-[#DEB992] font-semibold text-lg disabled:bg-red-500/20"
+          >
+            Lanzar Dados
+          </button>
+        </div>
+
+        <div id="dados" class="flex flex-col justify-center">
+          <div class="flex gap-6 mt-2 items-center justify-center">
+            <img
+              src="./resources/dice-dice-svgrepo-com.svg"
+              alt="dado1"
+              class="size-10"
+            />
+            <p>=</p>
+            <div id="dado1" class="dado"></div>
+          </div>
+          <div class="flex gap-6 mt-2 items-center justify-center">
+            <img
+              src="./resources/dice-dice-svgrepo-com.svg "
+              alt="dado2"
+              class="size-10"
+            />
+            <p>=</p>
+            <div id="dado2" class="dado"></div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <div
+            class="flex flex-col items-center border-1 border-[#DEB992] p-5 rounded-sm gap-3 bg-white/20"
+          >
+            <h1 class="text-xl font-semibold">Player 2</h1>
+            <img
+              src="./resources/player2.svg"
+              alt="player 2"
+              class="size-40"
+            /><strong>
+              <img
+                src="./resources/poker-piece-svgrepo-com.svg"
+                alt="fichas"
+                class="size-5"
+            /></strong>
+            <span id="fichas-j2">20</span>
+          </div>
+          <button
+            id="lanzarBtn1"
+            class="border-[#DEB992] border-1 p-2 rounded-sm bg-[#237b85] hover:bg-slate-100/20 hover:scale-110 transition-all duration-300 ease-in-out m-5 text-[#DEB992] font-semibold text-lg disabled:bg-red-500/20"
+          >
+            Lanzar Dados
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="estaciones"
+      class="flex justify-center items-start w-full gap-5 h-70 pt-10"
+    ></div>
+    <p id="mensaje"></p>
+    <section id="Manual" class="w-full h-screen mx-auto p-20 text-gray-400">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-bold text-center text-[#44B5C1] mb-6">
+          ¿Cómo Jugar?
+        </h1>
+
+        <p class="mb-4">
+          Este es un juego de dados para 2 jugadores. Cada jugador comienza con
+          <strong>20 fichas</strong>. El objetivo es ser el primero en quedarse
+          sin fichas.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-[#44B5C1] mt-6 mb-2">
+          Reglas del Juego
+        </h2>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>En cada turno, un jugador lanza <strong>2 dados</strong>.</li>
+          <li>
+            Si sale un <strong>6</strong> en cualquiera de los dados, el jugador
+            pierde una ficha automáticamente.
+          </li>
+          <li>Para cualquier otro número (1 a 5):</li>
+          <ul class="ml-20 list-[circle]">
+            <li>Ese número representa una <strong>estación</strong>.</li>
+            <li>
+              Las estaciones tienen capacidad limitada igual a su número (la
+              estación 3 admite 3 fichas, por ejemplo).
+            </li>
+            <li>
+              Si la estación aún tiene espacio, el jugador deja una ficha allí y
+              pierde una ficha de su total.
+            </li>
+            <li>
+              Si la estación está llena, el jugador toma todas las fichas de esa
+              estación y <strong>las suma a su total</strong>.
+            </li>
+          </ul>
+          <li>Los jugadores se turnan para lanzar los dados.</li>
+          <li>
+            Gana el primer jugador que se quede con <strong>0 fichas</strong>.
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-[#44B5C1] mt-6 mb-2">
+          Controles
+        </h2>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>
+            Cada jugador tiene un botón para lanzar sus dados cuando sea su
+            turno.
+          </li>
+          <li>El turno actual se indica claramente en la interfaz.</li>
+          <li>Las fichas se muestran como íconos apilados en cada estación.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-[#44B5C1] mt-6 mb-2">
+          Consejos
+        </h2>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>
+            Evita acumular muchas fichas: si tomas una estación llena, puedes
+            retrasarte.
+          </li>
+          <li>
+            Intenta vaciar tus fichas rápido, ¡pero cuidado con las estaciones
+            llenas!
+          </li>
+        </ul>
+      </div>
+      <div
+        class="flex justify-center items-center m-auto border-1 border-[#44B5C1] p-5 rounded-sm mt-10 w-24 h-10 hover:scale-110 transition-all duration-300 hover:bg-white/20 text-[#44B5C1]"
+      >
+        <a href="#header">Empezar</a>
+      </div>
+    </section>
+
+    <script src="game.js"></script>
+  </body>
+</html>
