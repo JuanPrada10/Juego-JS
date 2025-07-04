@@ -30,8 +30,10 @@ Dos jugadores compiten usando dados y fichas, colocándolas en estaciones según
 ## 🚀 Cómo usar
 
 1. Clona el repositorio:
+   ```bash
    git clone https://github.com/JuanPrada10/Juego-JS.git
    cd Juego-JS
+   ```
    ---
 ## 🎯 Mejoras futuras
  -Interfaz visual con HTML/CSS
@@ -41,6 +43,8 @@ Dos jugadores compiten usando dados y fichas, colocándolas en estaciones según
  -Animación de dados
 
  -Historial de jugadas
+---
+-link:https://app.netlify.com/projects/illustrious-cheesecake-06cf82/overview
 ---
 ## 👨‍💻 Autor
 Juan David Prada
