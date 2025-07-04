@@ -44,7 +44,7 @@ Dos jugadores compiten usando dados y fichas, colocándolas en estaciones según
 
  -Historial de jugadas
 ---
--link:https://app.netlify.com/projects/illustrious-cheesecake-06cf82/overview
+- link: https://illustrious-cheesecake-06cf82.netlify.app
 ---
 ## 👨‍💻 Autor
 Juan David Prada
